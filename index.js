@@ -20,6 +20,9 @@ function createBoard(dimensions) {
             cell.addEventListener('mouseenter', (e) => {
                 // Generate a random rgb color
                 e.target.style.backgroundColor = randomRGB();
+                let opacity = Number(e.target.style.opacity);
+                // Decrease the opacity by 0.1; if already 0, don't do it.
+                e.target.style.opacity = opacity + (opacity < 1 ? .1 : 0);
             });
             // Append the cell to the row
             row.appendChild(cell);
