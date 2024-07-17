@@ -1,4 +1,3 @@
-console.log("this works!");
 // Create a 16 X 16 grid of squares using js
 // It's best to put these squares within a container div in the html
 // Use Flexbox to make the divs appear as a grid
@@ -7,10 +6,19 @@ console.log("this works!");
 const container = document.querySelector("#container");
 const dimensions = 16;
 for (let i = 0; i < dimensions; i++) {
+    // Create the row
     let row = document.createElement("div");
+    // Add attributes to the row
+    row.classList.add('row');
+
     for (let i = 0; i < dimensions; i++) {
-        let col = document.createElement("div");
-        row.appendChild(col);
+        // Create the cell
+        let cell = document.createElement("div");
+        // Add attributes to the cell
+        cell.classList.add('cell');
+        // Append the cell to the row
+        row.appendChild(cell);
     }
+    // Append the row to the container
     container.appendChild(row);
 }
