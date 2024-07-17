@@ -16,6 +16,10 @@ for (let i = 0; i < dimensions; i++) {
         let cell = document.createElement("div");
         // Add attributes to the cell
         cell.classList.add('cell');
+        // Add event listener to cell for hover effect
+        cell.addEventListener('mouseenter', (e) => {
+            e.target.style.backgroundColor = 'blue';
+        });
         // Append the cell to the row
         row.appendChild(cell);
     }
