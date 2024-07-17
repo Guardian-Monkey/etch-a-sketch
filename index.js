@@ -18,7 +18,8 @@ function createBoard(dimensions) {
             cell.classList.add('cell');
             // Add event listener to cell for hover effect
             cell.addEventListener('mouseenter', (e) => {
-                e.target.style.backgroundColor = 'blue';
+                // Generate a random rgb color
+                e.target.style.backgroundColor = randomRGB();
             });
             // Append the cell to the row
             row.appendChild(cell);
@@ -51,3 +52,8 @@ changeDimensions.addEventListener('click', () => {
     // Create the new grid
     createBoard(dimensions);
 });
+
+// Return a random number between 0 - 255
+function randomRGB() {
+    return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+}
